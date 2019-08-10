@@ -95,7 +95,7 @@ var handleCodeDeploy = function(event, context) {
   var fields = [];
   var color = "warning";
   var footer;
-  var footer-icon;
+  var footer_icon;
 
   try {
     message = JSON.parse(event.Records[0].Sns.Message);
@@ -107,16 +107,16 @@ var handleCodeDeploy = function(event, context) {
     }
     if(message.deploymentGroupName === "ekoapi-dev-dg"){
       footer = "Ekofolio-API (DEV)";
-      footer-icon = "https://slack-imgs.com/?c=1&o1=wi32.he32.si&url=https%3A%2F%2Fbytebucket.org%2Fravatar%2F%257Bba33ce20-b0c5-4dc5-b65f-6b5bfdc770d4%257D%3Fts%3D2151117";
+      footer_icon = "https://slack-imgs.com/?c=1&o1=wi32.he32.si&url=https%3A%2F%2Fbytebucket.org%2Fravatar%2F%257Bba33ce20-b0c5-4dc5-b65f-6b5bfdc770d4%257D%3Fts%3D2151117";
     } else if(message.deploymentGroupName === "ekoapi-prd-dg"){
       footer = "Ekofolio-API (PRD)";
-      footer-icon = "https://slack-imgs.com/?c=1&o1=wi32.he32.si&url=https%3A%2F%2Fbytebucket.org%2Fravatar%2F%257Bba33ce20-b0c5-4dc5-b65f-6b5bfdc770d4%257D%3Fts%3D2151117";
+      footer_icon = "https://slack-imgs.com/?c=1&o1=wi32.he32.si&url=https%3A%2F%2Fbytebucket.org%2Fravatar%2F%257Bba33ce20-b0c5-4dc5-b65f-6b5bfdc770d4%257D%3Fts%3D2151117";
     } else if(message.deploymentGroupName === "ekoumb-dev-dg"){
       footer = "Ekofolio-Web (DEV)";
-      footer-icon = "https://slack-imgs.com/?c=1&o1=wi32.he32.si&url=https%3A%2F%2Fbytebucket.org%2Fravatar%2F%257Bf716eeed-31de-4090-89e6-35c5fed6e06e%257D%3Fts%3D2151123";
+      footer:icon = "https://slack-imgs.com/?c=1&o1=wi32.he32.si&url=https%3A%2F%2Fbytebucket.org%2Fravatar%2F%257Bf716eeed-31de-4090-89e6-35c5fed6e06e%257D%3Fts%3D2151123";
     } else if(message.deploymentGroupName === "ekoumb-prd-dg"){
       footer = "Ekofolio-Web (PRD)";
-      footer-icon = "https://slack-imgs.com/?c=1&o1=wi32.he32.si&url=https%3A%2F%2Fbytebucket.org%2Fravatar%2F%257Bf716eeed-31de-4090-89e6-35c5fed6e06e%257D%3Fts%3D2151123";
+      footer_icon = "https://slack-imgs.com/?c=1&o1=wi32.he32.si&url=https%3A%2F%2Fbytebucket.org%2Fravatar%2F%257Bf716eeed-31de-4090-89e6-35c5fed6e06e%257D%3Fts%3D2151123";
     }
     fields.push({ "title": "Message", "value": snsSubject, "short": false });
     fields.push({ "title": "Message", "value": message.status + ": " + message.deploymentId, "short": false });
@@ -143,7 +143,7 @@ var handleCodeDeploy = function(event, context) {
         "fields": fields,
         // "ts": timestamp,
         "footer": footer,
-        "footer_icon": footer-icon
+        "footer_icon": footer_icon
       }
     ],
   };
