@@ -94,6 +94,8 @@ var handleCodeDeploy = function(event, context) {
   var message;
   var fields = [];
   var color = "warning";
+  var footer;
+  var footer-icon;
 
   try {
     message = JSON.parse(event.Records[0].Sns.Message);
